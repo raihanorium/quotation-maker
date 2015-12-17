@@ -1,0 +1,29 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 35px;
+  font-size: 12px;
+}
+
+.jumbotron{margin-bottom: 0;}
+
+
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 35px;
+  padding: 5px 0 0 0;
+  background-color: #f5f5f5;
+}
+
+
+#result-block{border: 1px dashed #ccc;}

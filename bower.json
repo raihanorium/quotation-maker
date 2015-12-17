@@ -1,0 +1,24 @@
+{
+  "name": "quotation-maker",
+  "description": "Helps make business produtcs quotation",
+  "main": "index.html",
+  "authors": [
+    "Raihan"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8",
+    "angular-ui-router": "~0.2.15"
+  }
+}
