@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotation</title>
+	<style type="text/css">
+		#result-block{
+			border: 1px dashed #ccc;
+			width: 100%; height: 100%;
+			font-size: 10pt;
+		}
+		#watermark {
+		    display: block; position: absolute;
+		    top: 30%; left: 0; width: 100%; height: 80%; opacity : 0.2; z-index: -1;
+		}
+
+		tr.product th{border: 1px solid #ccc; background-color: #ddd;}
+		tr.product td{border: 1px solid #ccc;}
+	</style>
+</head>
+<body>
+	<table id="result-block" border="0">
+		<thead>
+			<tr>
+				<td colspan="3">
+					<img src="http://www.vectortemplates.com/raster/superman-logo-012.png" alt="logo" style="max-width:100px;" />
+				</td>
+				<td colspan="9" style="text-align:right">
+					<h1 style="margin-bottom:2px;">{{myInfo.orgName}}</h1>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="12" style="text-align:right;">
+					{{myInfo.orgAddress}}<br />
+					Tel: {{myInfo.orgTel}}<br />
+					Web: {{myInfo.orgWeb}}
+					<hr />
+				</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td colspan="12" align="center">
+					<h3>Quotation</h3>
+				</td>
+			</tr>
+
+			<tr class="product">
+				<th>SL.</th>
+				<th colspan="3">Product / Service</th>
+				<th colspan="3">Description</th>
+				<th colspan="2">Unit Price</th>
+				<th>Quantity</th>
+				<th colspan="2">Total</th>
+			</tr>
+
+			<tr class="product">
+				<td>1</td>
+				<td colspan="3">AV Tech IP Camera</td>
+				<td colspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br>
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+				cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat<br> cupidatat non
+				proident,<br> sunt in culpa qui officia<br> deserunt mollit anim<br> id est laborum.</td>
+				<td colspan="2">3,500/-</td>
+				<td>1</td>
+				<td colspan="2">1,500/-</td>
+			</tr>
+
+			<tr class="product">
+				<td>1</td>
+				<td colspan="3">AV Tech IP Camera</td>
+				<td colspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br>
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+				cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat<br> cupidatat non
+				proident,<br> sunt in culpa qui officia<br> deserunt mollit anim<br> id est laborum.</td>
+				<td colspan="2">3,500/-</td>
+				<td>1</td>
+				<td colspan="2">1,500/-</td>
+			</tr>
+
+			<tr class="product">
+				<td>1</td>
+				<td colspan="3">AV Tech IP Camera</td>
+				<td colspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br>
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+				cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat<br> cupidatat non
+				proident,<br> sunt in culpa qui officia<br> deserunt mollit anim<br> id est laborum.</td>
+				<td colspan="2">3,500/-</td>
+				<td>1</td>
+				<td colspan="2">1,500/-</td>
+			</tr>
+
+			<tr class="product">
+				<td>1</td>
+				<td colspan="3">AV Tech IP Camera</td>
+				<td colspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br>
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+				cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat<br> cupidatat non
+				proident,<br> sunt in culpa qui officia<br> deserunt mollit anim<br> id est laborum.</td>
+				<td colspan="2">3,500/-</td>
+				<td>1</td>
+				<td colspan="2">1,500/-</td>
+			</tr>
+
+			<tr class="product">
+				<td>1</td>
+				<td colspan="3">AV Tech IP Camera</td>
+				<td colspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br>
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+				cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat<br> cupidatat non
+				proident,<br> sunt in culpa qui officia<br> deserunt mollit anim<br> id est laborum.</td>
+				<td colspan="2">3,500/-</td>
+				<td>1</td>
+				<td colspan="2">1,500/-</td>
+			</tr>
+
+			<tr class="product">
+				<td>1</td>
+				<td colspan="3">AV Tech IP Camera</td>
+				<td colspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br>
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+				cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat<br> cupidatat non
+				proident,<br> sunt in culpa qui officia<br> deserunt mollit anim<br> id est laborum.</td>
+				<td colspan="2">3,500/-</td>
+				<td>1</td>
+				<td colspan="2">1,500/-</td>
+			</tr>
+
+			<tr class="product">
+				<td>1</td>
+				<td colspan="3">AV Tech IP Camera</td>
+				<td colspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br>
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+				cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat<br> cupidatat non
+				proident,<br> sunt in culpa qui officia<br> deserunt mollit anim<br> id est laborum.</td>
+				<td colspan="2">3,500/-</td>
+				<td>1</td>
+				<td colspan="2">1,500/-</td>
+			</tr>
+
+			<img id="watermark" src="http://www.vectortemplates.com/raster/superman-logo-012.png" />
+		</tbody>
+	</table>
+</body>
+</html>

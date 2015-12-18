@@ -43,7 +43,7 @@ app.controller('quotationCtrl', ['$scope', '$rootScope', function($scope, $rootS
 
 	$scope.print = function() {
 		var printContents = document.getElementById('result-block').innerHTML;
-		var popupWin = window.open('', '_blank', 'width=960,height=600');
+		var popupWin = window.open('', '_blank', 'width=500,height=600');
 		popupWin.document.open()
 		popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="css/style.css" /></head><body onload="window.print()">' + printContents + '</html>');
 		popupWin.document.close();
