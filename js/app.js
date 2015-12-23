@@ -28,19 +28,32 @@ app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $
     ];
     $rootScope.products = [
     	{id: 1, title: 'IP Camera', unitPrice: 2500, unit: 'pc(s)', quantity: 4},
-    	{id: 2, title: 'Cable', unitPrice: 22, unit: 'yd(s)', quantity: 50}
+    	{id: 2, title: 'Cat 6 Cable', unitPrice: 18, unit: 'yd(s)', quantity: 50},
+    	{id: 3, title: 'Dome Camera', unitPrice: 1900, unit: 'pc(s)', quantity: 5},
+    	{id: 4, title: 'Power Cable', unitPrice: 22, unit: 'yd(s)', quantity: 50}
     ];
 }]);
 
 app.controller('quotationCtrl', ['$scope', '$rootScope', '$filter', function($scope, $rootScope, $filter){
 	$scope.frmData = {};
 	$scope.frmData.template = {};
+	$scope.frmData.template = $rootScope.allTemplates[0];
+	$scope.frmData.clientCompany = 'Some Client Ltd.';
+	$scope.frmData.subject = 'Quotation for Some Client Ltd.';
+	$scope.frmData.introText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+
+	$scope.myInfo = {
+		name: 'Raihan Shikder',
+		orgName: 'My Organization Ltd.',
+		orgAddress: '121/222, Bara Moghbazar, Dhaka-1203',
+		orgTel: '+88 01712 345 678',
+		orgWeb: 'http://www.webjarbd.com',
+		orgLogo: 'img/Superman_logo.png'
+	};
+	
 	$scope.changedValue = function(item){
 		$scope.frmData.template = item;
 	}
-
-	$scope.frmData.template = $rootScope.allTemplates[0];
-	$scope.frmData.clientCompany = 'Some Client Ltd.';
 
 	$scope.print = function() {
 		var printContents = document.getElementById('result-block').innerHTML;
@@ -53,13 +66,4 @@ app.controller('quotationCtrl', ['$scope', '$rootScope', '$filter', function($sc
 	$scope.updateProductSelection = function (checkBox) {
 	    $scope.selectedProducts = $filter('filter')($rootScope.products, {checked: true});
 	}
-
-	$scope.myInfo = {
-		name: 'Raihan Shikder',
-		orgName: 'My Organization Ltd.',
-		orgAddress: '121/222, Bara Moghbazar, Dhaka-1203',
-		orgTel: '+88 01712 345 678',
-		orgWeb: 'http://www.webjarbd.com',
-		orgLogo: 'img/Superman_logo.png'
-	};
 }]);

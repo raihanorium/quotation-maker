@@ -10,6 +10,8 @@ body {
   font-size: 12px;
 }
 
+textarea { resize:vertical; }
+
 .jumbotron{margin-bottom: 0;}
 
 #product-list{
