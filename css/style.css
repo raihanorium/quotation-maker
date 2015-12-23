@@ -12,8 +12,15 @@ body {
 
 .jumbotron{margin-bottom: 0;}
 
-
-
+#product-list{
+  max-height:200px; overflow:auto;
+}
+#product-list .list-group-item{
+  padding: 5px 10px;
+}
+#product-list .form-group {
+  margin-bottom: 0;
+}
 
 .footer {
   position: absolute;
@@ -41,4 +48,10 @@ body {
     height: 80%;
     opacity : 0.2;
     z-index: -1;
+}
+
+@media print {
+  *{font-family: serif;}
+  body, table *{font-size: 12px;}
+  .table th{text-align: center;}
 }

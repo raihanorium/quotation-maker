@@ -27,12 +27,12 @@ app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $
     }
     ];
     $rootScope.products = [
-    	{title: 'IP Camera', unitPrice: 2500},
-    	{title: 'Cable', unitPrice: 22}
+    	{id: 1, title: 'IP Camera', unitPrice: 2500, unit: 'pc(s)', quantity: 4},
+    	{id: 2, title: 'Cable', unitPrice: 22, unit: 'yd(s)', quantity: 50}
     ];
 }]);
 
-app.controller('quotationCtrl', ['$scope', '$rootScope', function($scope, $rootScope){
+app.controller('quotationCtrl', ['$scope', '$rootScope', '$filter', function($scope, $rootScope, $filter){
 	$scope.frmData = {};
 	$scope.frmData.template = {};
 	$scope.changedValue = function(item){
@@ -40,21 +40,26 @@ app.controller('quotationCtrl', ['$scope', '$rootScope', function($scope, $rootS
 	}
 
 	$scope.frmData.template = $rootScope.allTemplates[0];
+	$scope.frmData.clientCompany = 'Some Client Ltd.';
 
 	$scope.print = function() {
 		var printContents = document.getElementById('result-block').innerHTML;
 		var popupWin = window.open('', '_blank', 'width=500,height=600');
 		popupWin.document.open()
-		popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="css/style.css" /></head><body onload="window.print()">' + printContents + '</html>');
+		popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="css/style.css" /></head><body onload="window.print()">' + printContents + '</html>');
 		popupWin.document.close();
+	}
+
+	$scope.updateProductSelection = function (checkBox) {
+	    $scope.selectedProducts = $filter('filter')($rootScope.products, {checked: true});
 	}
 
 	$scope.myInfo = {
 		name: 'Raihan Shikder',
-		orgName: 'WebJar',
+		orgName: 'My Organization Ltd.',
 		orgAddress: '121/222, Bara Moghbazar, Dhaka-1203',
 		orgTel: '+88 01712 345 678',
 		orgWeb: 'http://www.webjarbd.com',
-		orgLogo: 'http://www.vectortemplates.com/raster/superman-logo-012.png'
+		orgLogo: 'img/Superman_logo.png'
 	};
 }]);

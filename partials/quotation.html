@@ -26,6 +26,21 @@
 						</select>
 					</div>
 
+					<div class="form-group">
+						<label for="clientAddress">Products</label>
+						<ul id="product-list" class="list-group">
+							<li class="list-group-item checkbox" ng-repeat="chk in products">
+								<label><input type="checkbox" name="{{chk.title}}" id="{{chk.id}}" ng-model="chk.checked" ng-change="updateProductSelection(chk)" /> {{chk.title}}</label>
+								
+								<div class="form-group pull-right form-inline">
+									Quantity
+									<input type="text" class="form-control input-sm" id="clientCompany" ng-model="chk.quantity" placeholder="Quantity">
+								</div>
+								<div style="clear:both;"></div>
+							</li>
+						</ul>
+					</div>
+
 					<button class="btn btn-primary" ng-submit="">Submit</button>
 			  </div>
 		</div>
