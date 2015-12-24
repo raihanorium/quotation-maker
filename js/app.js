@@ -49,6 +49,7 @@ app.controller('quotationCtrl', ['$scope', '$rootScope', '$filter', function($sc
 		orgName: 'My Organization Ltd.',
 		orgAddress: '121/222, Bara Moghbazar, Dhaka-1203',
 		orgTel: '+88 01712 345 678',
+		email: 'info@webjarbd.com',
 		orgWeb: 'http://www.webjarbd.com',
 		orgLogo: 'img/Superman_logo.png'
 	};

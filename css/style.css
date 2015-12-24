@@ -51,6 +51,9 @@ hr {
    position: relative;
    /*min-height: 300px;*/
 }
+#preview{
+  height: 450px; overflow-y: auto;
+}
 #watermark {
     display: block;
     position: absolute;
@@ -62,8 +65,19 @@ hr {
     z-index: -1;
 }
 
+#contactPerson{
+  border-top: 1px solid black;
+}
+
 @media print {
   *{font-family: serif;}
   body, table *{font-size: 12px;}
   .table th{text-align: center;}
+  .table td, .table th {
+    background-color: transparent; !important;
+  }
 }
+
+.table td, .table th {
+    background-color: transparent; !important;
+  }
