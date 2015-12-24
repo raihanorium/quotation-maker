@@ -36,14 +36,16 @@ app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $
 
 app.controller('quotationCtrl', ['$scope', '$rootScope', '$filter', function($scope, $rootScope, $filter){
 	$scope.frmData = {};
+	$scope.selectedProducts = {};
 	$scope.frmData.template = {};
 	$scope.frmData.template = $rootScope.allTemplates[0];
 	$scope.frmData.clientCompany = 'Some Client Ltd.';
-	$scope.frmData.subject = 'Quotation for Some Client Ltd.';
+	$scope.frmData.subject = 'Quotation for Blah Blah product';
 	$scope.frmData.introText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
 	$scope.myInfo = {
 		name: 'Raihan Shikder',
+		title: 'Marketing Executive',
 		orgName: 'My Organization Ltd.',
 		orgAddress: '121/222, Bara Moghbazar, Dhaka-1203',
 		orgTel: '+88 01712 345 678',
@@ -65,5 +67,14 @@ app.controller('quotationCtrl', ['$scope', '$rootScope', '$filter', function($sc
 
 	$scope.updateProductSelection = function (checkBox) {
 	    $scope.selectedProducts = $filter('filter')($rootScope.products, {checked: true});
+	}
+
+	$scope.getGrandTotal = function(){
+		var total = 0;
+		for(var i = 0; i < $scope.selectedProducts.length; i++){
+			var product = $scope.selectedProducts[i];
+			total += (product.unitPrice * product.quantity);
+		}
+		return total;
 	}
 }]);

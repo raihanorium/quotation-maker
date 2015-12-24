@@ -6,12 +6,52 @@
 			</div>
 			<div class="panel-body">
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-					<div ng-include="'partials/form-sections/quotation.html'"></div>
-					<div ng-include="'partials/form-sections/client.html'"></div>
-					<div ng-include="'partials/form-sections/products.html'"></div>
-				</div>
+					<div class="panel panel-info">
+						<div class="panel-heading" role="tab" id="quotationInfo">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#quotation-info" aria-expanded="true" aria-controls="quotation-info">
+									Quotation
+								</a>
+							</h4>
+						</div>
+						<div id="quotation-info" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="quotationInfo">
+							<div class="panel-body">
+								<div ng-include="'partials/form-sections/quotation.html'"></div>
+							</div>
+						</div>
+					</div>
 
-				<button class="btn btn-primary" ng-submit="">Submit</button>
+					<div class="panel panel-info">
+						<div class="panel-heading" role="tab" id="clientInfo">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#client-info" aria-expanded="true" aria-controls="client-info">
+									Client
+									<!-- <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+								</a>
+							</h4>
+						</div>
+						<div id="client-info" class="panel-collapse collapse" role="tabpanel" aria-labelledby="clientInfo">
+							<div class="panel-body">
+								<div ng-include="'partials/form-sections/client.html'"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-info">
+						<div class="panel-heading" role="tab" id="headingTwo">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#products" aria-expanded="false" aria-controls="products">
+									Products
+								</a>
+							</h4>
+						</div>
+						<div id="products" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div class="panel-body">			
+								<div ng-include="'partials/form-sections/products.html'"></div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

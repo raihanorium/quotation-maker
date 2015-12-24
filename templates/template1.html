@@ -17,6 +17,15 @@
 
 	<hr />
 
+	<fieldset>
+		<legend>Prepared for:</legend>
+		<strong>
+			{{frmData.clientCompany}}
+		</strong>
+		<br />
+		<p style="white-space: pre;">{{frmData.clientAddress}}</p>
+	</fieldset>
+
 	<div id="main">
 		<h3 align="center">{{frmData.subject}}</h3>
 		<p>{{frmData.introText}}</p>
@@ -53,7 +62,17 @@
 					<td align="right">{{ (prod.quantity * prod.unitPrice) | currency : 'BDT ' }}/-</td>
 				</tr>
 			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="5" class="text-right">Grand Total:</th>
+					<th class="text-right">{{ getGrandTotal() | currency : 'BDT ' }}/-</th>
+				</tr>
+			</tfoot>
 		</table>
+
+		<p>If you have any questions regarding this quotation, please don't hasitate to contact us.</p>
+
+		<hr />
 	</div>
 	<img id="watermark" ng-src="{{myInfo.orgLogo}}" />
 </div>
