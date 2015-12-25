@@ -33,6 +33,10 @@ app.controller('quotationCtrl', ['$scope', '$rootScope', '$filter', function($sc
 	$scope.frmData = {};
 	$scope.selectedProducts = {};
 	$scope.frmData.template = {};
+	
+	var d = new Date();
+	var datestring = d.getDate()  + "-" + (d.getMonth()+1) + "-" + d.getFullYear();
+	$scope.frmData.quotDate = datestring;
 	$scope.frmData.template = $rootScope.allTemplates[0];
 	$scope.frmData.clientCompany = 'Some Client Ltd.';
 	$scope.frmData.subject = 'Quotation for Blah Blah product';
