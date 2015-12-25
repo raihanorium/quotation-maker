@@ -52,7 +52,7 @@ hr {
    /*min-height: 300px;*/
 }
 #preview{
-  height: 450px; overflow-y: auto;
+  /*height: 450px; overflow-y: auto;*/
 }
 #watermark {
     display: block;

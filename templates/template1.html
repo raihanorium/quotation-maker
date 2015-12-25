@@ -21,6 +21,7 @@
 		<legend>Prepared for:</legend>
 		<strong>
 			{{frmData.clientCompany}}
+			<span class="pull-right">Date: {{frmData.quotDate}}</span>
 		</strong>
 		<br />
 		<p style="white-space: pre;">{{frmData.clientAddress}}</p>
@@ -90,6 +91,8 @@
 			tempor incididunt ut labore et dolore magna aliqua.</li>
 		</ul>
 
+		<br />
+
 		<h4 class="text-right">Contact Person</h4>
 
 		<br />
@@ -97,7 +100,6 @@
 			<p id="contactPerson" class="text-right">
 				<strong>{{myInfo.name}}</strong><br />
 				{{myInfo.title}}<br />
-				{{myInfo.orgName}}<br />
 				{{myInfo.orgTel}}<br />
 				{{myInfo.email}}
 			</p>

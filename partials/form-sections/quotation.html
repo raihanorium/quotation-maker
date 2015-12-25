@@ -1,6 +1,16 @@
-<div class="form-group">
-	<label for="template">Select Template</label>
-	<select class="form-control" id="template" ng-model="frmData.template" ng-options="tpl as tpl.name for tpl in allTemplates" ng-change="changedValue(frmData.template)"></select>
+<div class="row">
+	<div class="col-sm-6">
+		<div class="form-group">
+			<label for="template">Select Template</label>
+			<select class="form-control" id="template" ng-model="frmData.template" ng-options="tpl as tpl.name for tpl in allTemplates" ng-change="changedValue(frmData.template)"></select>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="form-group">
+			<label for="quotDate">Date</label>
+			<input type="text" class="form-control" id="quotDate" ng-model="frmData.quotDate" />
+		</div>
+	</div>
 </div>
 
 <div class="form-group">
@@ -10,5 +20,9 @@
 
 <div class="form-group">
 	<label for="introText">Intro Text</label>
-	<textarea class="form-control" id="introText" ng-model="frmData.introText" placeholder="Introduction Text"></textarea>
+	<textarea class="form-control" id="introText" ng-model="frmData.introText" placeholder="Introduction Text" rows="6"></textarea>
 </div>
+
+<script type="text/javascript">
+	$('#quotDate').datetimepicker({timepicker:false, format:'d-m-Y'});
+</script>
