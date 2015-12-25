@@ -1,11 +1,21 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router', 'textAngular']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $provide) {
 	$urlRouterProvider.otherwise("/");
 
 	$stateProvider
 	.state('quotation', {url: "/", templateUrl: "partials/quotation.html"})
-	.state('templates', {url: "/templates", templateUrl: "partials/templates.html"})
+	.state('templates', {url: "/templates", templateUrl: "partials/templates.html"});
+
+	// textangular
+	$provide.decorator('taOptions', ['$delegate', function(taOptions) {
+        taOptions.toolbar = [
+		      ['h4', 'h5', 'h6', 'p', 'quote'],
+		      ['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],
+		      ['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent']
+		  ];
+        return taOptions;
+    }]);
 });
 
 app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
@@ -41,7 +51,7 @@ app.controller('quotationCtrl', ['$scope', '$rootScope', '$filter', function($sc
 	$scope.frmData.clientCompany = 'Some Client Ltd.';
 	$scope.frmData.subject = 'Quotation for Blah Blah product';
 	$scope.frmData.introText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-
+	$scope.frmData.tnc='<ul><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.</li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.</li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.</li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.</li></ul>';
 	$scope.myInfo = {
 		name: 'Raihan Shikder',
 		title: 'Marketing Executive',
