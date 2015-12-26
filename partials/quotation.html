@@ -38,16 +38,31 @@
 					</div>
 
 					<div class="panel panel-info">
-						<div class="panel-heading" role="tab" id="headingTwo">
+						<div class="panel-heading" role="tab" id="productsSection">
 							<h4 class="panel-title">
 								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#products" aria-expanded="false" aria-controls="products">
 									Products
 								</a>
 							</h4>
 						</div>
-						<div id="products" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<div id="products" class="panel-collapse collapse" role="tabpanel" aria-labelledby="productsSection">
 							<div class="panel-body">			
 								<div ng-include="'partials/form-sections/products.html'"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-info">
+						<div class="panel-heading" role="tab" id="myInfo">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#my-info" aria-expanded="false" aria-controls="products">
+									Marketing Executive
+								</a>
+							</h4>
+						</div>
+						<div id="my-info" class="panel-collapse collapse" role="tabpanel" aria-labelledby="myInfo">
+							<div class="panel-body">			
+								<div ng-include="'partials/form-sections/my-info.html'"></div>
 							</div>
 						</div>
 					</div>
